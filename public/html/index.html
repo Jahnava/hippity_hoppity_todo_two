@@ -1,39 +1,74 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!--A shorthand method to define an HTML document’s character set. The same as <meta http-equiv="content-type" content="text/html; charset=utf-8">-->
     <meta charset="utf-8">
-    <title>Imgrrrish</title>
+    <title>Hippity_Hoppity_Todo_Two</title>
+    <!--code says that there is a file that is a stylesheet - that is, it contains CSS rules(or bootstrap link or whatever) and its name is main.css - go get it and process it contents.-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    <!--logo img-->
-    <div id="app" class='container'>
-      <div class="row">
+<!-- div is essentially a container that encapsulates html elements into sections, so in this case the div is encapsulating the app id-->
+<!--id is used to target a specific unique element, so that i'm able to select only this one which is named "app". id's should'nt be used alot.-->
+<!--classes can be used on multiple elements. If ipods was for sale at a store, the ID is like the serial number and the class is like the bar code. The ipods can still come in different colors and variations, but they all have the same barcode.-->
+<!--Bootstrap requires a containing aka 'container' element to wrap site contents and house the grid system.-->
+        <div id="app" class='container'>
+<!--Columns create gutters (gaps between column content) via padding. That padding is offset in rows for the first and last column via negative margin on .rows-->
+    <div class="row">
+<!--col-xs-3 is specific to creating grid layouts on bootstrap. This manages the columns, and sets them to xs, as to manage the device size(this would be made for an xs devices and has an auto container).
+The number used deturmines the columns placement and size-->
+<!-- form-group is a group of any form controls. Use with any block-level element like <fieldset> or <div>.look into this more later...-->
     <div class="form-group col-xs-3">
-      <img src="http://placehold.it/75x75"
-        class="responsive">
-    </div>
+<!--responsive class tag sets the image class to be responsive, so that it will scale nicely to the parent element-->
+    <img src="http://placehold.it/75x75"
+    class="responsive">
+   </div>
+ </div>
+    <div class="row">
+      <div class="form-group col-xs-6">
+<!-- input type defines the "type" of input. It could be text, color, search, time, url, etc.-->
+        <input type="text" class="form-control"
+        placeholder='Date' id='date'>
       </div>
-    <!--text bar -->
-  <div class="row">
-    <div class="form-group col-xs-6">
-      <input type="text" class="form-control"
+
+      <div class="form-group col-xs-6">
+<!--Form control gets applied to an input type="" tag in order to create the specific form desired, such as: text, password, datetime-local, date, month, time, week, number, email, url, search, tel, color-->
+        <input type="text" class="form-control"
+        placeholder='Category' id='category'>
+      </div>
+      <div class="form-group col-xs-12">
+        <input type="text" class="form-control"
         placeholder='task' id='task'>
-    </div>
+      </div>
+      </div>
+        <div class="row">
+          <div class="form-group col-xs-12">
+            <button id= "create" class="btn btn-info btn-block">+</button id='.createButton'>
+           </div>
+        </div>
+        <hr>
+  <!--example Todo-->
+    <div class="row well">
+      <div class="col-xs-1">
+        <input type=checkbox>
+      </div>
+      <div class="col-xs-8">
+        Name: (Date) [Category]
+      </div>
+      <div class="col-xs-1">
+        <button class="btn btn-default btn-sm">E</button>
+      </div>
+      <div class="col-xs-1">
+        <button class="btn btn-danger btn-sm">X</button>
+      </div>
+      </div>
+  <!--End of example todo-->
+  <ul id='list'></ul>
   </div>
-<!--button-->
-<div class="row">
-  <div class="form-group col-xs-12">
-    <button id= "create" class="btn btn-info btn-block">+</button id='.createButton'>
-  </div>
-</div>
-   <hr>
-   <!-- -->
-   <ul id='list'
- </ul>
-       <script src="js/imgrrrish.js"></script>
-       <script src="js/app.js"></script>
+
+    <script src="js/todo.js"></script>
+    <script src="js/app.js"></script>
 
 
   </body>
